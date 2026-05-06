@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+    
+<head>
+<style>
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator mnożenia</title>
+    <link rel="stylesheet" href="style.css"> 
+
+    </style>
+
+</head>
+<body>
+    <div class="kalkulator">
+        <h2>Kalkulator mnożenia</h2>
+        <p><a href="https://github.com/Ihor570/kolokwium_73109_.git">Link do repozytorium</a>.</p>
+        <div class="grupa1">
+            <label>Liczba 1:</label>
+            <input type="number1" id="liczba1" placeholder="np. 5">
+        </div>
+        
+        <div class="grupa2">
+            <label>Liczba 2:</label>
+            <input type="number2" id="liczba2" placeholder="np. 3">
+        </div>
+        
+        <button id="obliczBtn">Oblicz</button>
+        
+        <div id="wynikBox">
+            <p>Wynik mnożenia: <span id="wartoscBmi">0</span></p>
+            <p id="kategoriaBmi"></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("obliczBtn").addEventListener("click", function() {
+            let pole1 = document.getElementById("liczba1").value;
+            let pole2 = document.getElementById("liczba2").value;
+            let wartoscBmiText = document.getElementById("wartoscBmi");
+            let kategoriaText = document.getElementById("kategoriaBmi");
+
+            if (pole1 === "" || pole2 === "") {
+                alert("Wpisz liczbe!");
+                return;
+            }
+            if (pole1 == 0 || pole2 == 0) {
+                alert("Bląd");
+                return;
+            }
+
+            let wzrost1 = Number(pole1);
+            let wzrost2 = Number(pole2);
+
+            let result = wzrost2 *wzrost1;
+             
+
+            wartoscBmiText.innerText = result;
+
+            
+        });
+    </script>
+
+
+
+
+</html>    
+</body>
