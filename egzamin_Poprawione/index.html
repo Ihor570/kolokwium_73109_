@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator mnożenia</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="kalkulator">
+        <h2>Kalkulator mnożenia</h2>
+        <p><a href="https://github.com/Ihor570/kolokwium_73109_.git">Link do repozytorium</a>.</p>
+        <div class="grupa1">
+            <label>Liczba 1:</label>
+            <input type="number" id="liczba1" placeholder="np. 5">
+        </div>
+        
+        <div class="grupa2">
+            <label>Liczba 2:</label>
+            <input type="number" id="liczba2" placeholder="np. 3">
+        </div>
+        
+        <button id="obliczBtn">Oblicz</button>
+        
+        <div id="wynikBox">
+            <p>Wynik mnożenia: <span id="tekstWyniku">0</span></p>
+            
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("obliczBtn").addEventListener("click", function() {
+            let pole1 = document.getElementById("liczba1").value;
+            let pole2 = document.getElementById("liczba2").value;
+            let WynikText = document.getElementById("tekstWyniku");
+            
+
+            if (pole1 === "" || pole2 === "") {
+                alert("Wpisz liczbe!");
+                return;
+            }
+            if (pole1 == 0 || pole2 == 0) {
+                alert("Bląd");
+                return;
+            }
+
+            let n1 = Number(pole1);
+            let n2 = Number(pole2);
+
+            let result = n1 * n2;
+             
+
+            WynikText.innerText = result;
+
+            
+        });
+    </script>
+</body>
+</html>    
